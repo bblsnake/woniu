@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <form action="/login" method="POST" name="loginForm">
+        <!-- 词汇量 -->
+        <!-- (.form-group>label+input.form-control)*3 -->
+        <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" name="emailInput" id="emailInput" placeholder="请输入你的邮箱" class="form-control" required reg="^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[0-9a-zA-Z]+$">
+        </div>
+        <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="password" required minlength="6" maxlength="12" name="passwordInput" id="passwordInput" placeholder="请输入你的密码" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="fileInput">File input</label>
+            <input type="file" name="fileInput" id="fileInput" placeholder="">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label for="">
+                <input type="checkbox" name="" id="">Check me out
+            </label>
+        </div>
+        <button class="btn btn-default">Submit</button>
+    </form>
+</body>
+
+</html>
