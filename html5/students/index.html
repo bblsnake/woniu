@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Students Table DOM</title>
+    <style>
+    .container{
+        /* 块级元素 block */
+        width: 960px;
+        margin: 0 auto;
+    }
+    .table{
+        width: 100%;
+        text-align: center;
+    }
+    th,td{
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+   <table class="table">
+       <thead>
+           <tr>
+               <th>序号</th>
+               <th>姓名</th>
+               <th>是否单身</th>
+               <th>家乡</th>
+               <th>年龄</th>
+           </tr>
+       </thead>
+       <tbody>
+           <!-- <tr>
+               <td>1</td>
+               <td>刘磊</td>
+               <td>是</td>
+               <td>宜春</td>
+               <td>22</td>
+           </tr> -->
+       </tbody>
+       <tbody></tbody>
+   </table>
+</div>
+    <!-- 11位同学 -->
+    <script>
+        // 数据显示到页面的工作
+      const students=[
+        //   对象字面量
+          {
+              name:'刘磊',//string
+              hometown:'宜春',
+              single:true,//boolean
+              age:22,//number
+              wife:null,//null
+              company:undefined,
+              hobbies:{//JSON Object
+              game:['LOL','MaJiang'],//arr object
+              event:['撩','吃']
+              },
+              sing:function(song){
+                  console.log(this.name+'来一首'+song.name)
+              }
+          },
+          {
+              name:'李吉勇',
+              hometown:'吉安',
+              single:true,
+              age:22,   
+          },
+          {
+                name: '欧阳江川',
+                single: false,
+                hometown: '九江',
+                age: 22
+            },
+          {             
+                name: '严端银',
+                hometown: '鹰潭',
+                single: false, //boolean
+                age: 22,  //number
+                },
+          {
+                 name :'杜发军',
+                hometown:'赣州',
+                single:false,
+                age:22,},
+          {
+                    name:'廖玉良',
+                    hometown:'宜春',
+                    single: true,
+                    age: 22, 
+                },
+          {                
+                name:'吴梦琪',
+                hometown:'南昌',
+                single:false,//boolean
+                age:22,//number
+                },
+          {
+            name:'许琳鑫',
+            hometown: '上饶',
+            single: false, 
+            age: 21, 
+        }
+      ];
+    //   DOM
+    let tBody=document.querySelector('.table tbody');
+    console.log(tBody);
+    students.forEach((student,i)=>{
+        // console.log(student,i);
+        // let student =students[i];
+        tBody.innerHTML+=`
+    <tr>
+      <td>${i+1}</td>
+      <td>${student.name}</td>
+      <td>${student.single?'是':'否'}</td>
+      <td>${student.hometown}</td>
+      <td>${student.age}</td>
+    </tr>
+        `
+    });
+    // for(let i=0;i<students.length;i++){
+    //     let student =students[i];
+    //     tBody.innerHTML+=`
+    // <tr>
+    //   <td>${i+1}</td>
+    //   <td>${student.name}</td>
+    //   <td>${student.single?'是':'否'}</td>
+    //   <td>${student.hometown}</td>
+    //   <td>${student.age}</td>
+    // </tr>
+    //     `
+    // }
+    // let student=students[0];
+    // tBody.innerHTML=`
+    // <tr>
+    //   <td>1</td>
+    //   <td>${student.name}</td>
+    //   <td>${student.single}</td>
+    //   <td>${student.hometown}</td>
+    //   <td>${student.age}</td>
+    // </tr>
+    // `;
+    </script>
+</body>
+</html>
