@@ -17,7 +17,8 @@
             return new Promise((resolve,reject) => {
                 setTimeout(() => {
                 console.log("猛哥要相亲了！")
-                resolve('相亲很顺利！')
+                // resolve('相亲很顺利！')
+                reject('相亲失败')
             },1000)
             }) 
         }
@@ -37,7 +38,18 @@
         //     console.log(e)
         //     marry()
         // })
-        xq().then(marry).then(sw)
+
+        // xq().then(marry).then(sw)
+
+        xq().catch((e) => {
+            console.log(e);
+            marry()
+        }).then(sw)
+
+        // Promise.all([xq(),marry()]).then(sw)
+
+        // Promise.race([xq(),marry()]).then(sw)
+
         // marry()
     </script>
 </body>
